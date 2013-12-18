@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string># just to remind you of some useful environment variables
+# see Help / Environment Variables for the full list
+#echo File: "$TM_FILEPATH"
+#echo Directory: "$TM_DIRECTORY"
+#echo Support: "$TM_SUPPORT_PATH"
+#echo Word: "$TM_CURRENT_WORD"
+#echo Selection: "$TM_SELECTED_TEXT"
+
+# get the filename to use in the binary
+FILENAME=$(basename $TM_FILEPATH)
+FILEBASE=${FILENAME%.dasm}
+
+/usr/bin/dasm "$TM_FILEPATH" -I/usr/include/vcs -f3 -o"$FILEBASE.bin"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@b</string>
+	<key>name</key>
+	<string>Build</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.6502asm</string>
+	<key>uuid</key>
+	<string>C9F04715-FB67-4299-8E0A-2D754414A925</string>
+</dict>
+</plist>

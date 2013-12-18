@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>##### BUILD
+FILENAME=$(basename $TM_FILEPATH)
+FILEBASE=${FILENAME%.dasm}
+/usr/bin/dasm "$TM_FILEPATH" -I/usr/include/vcs -f3 -o"$FILEBASE.bin"
+echo ""
+
+##### RUN
+PATH_TO_STELLA=$(find /Applications -maxdepth 2 -name "Stella.app" -print) 
+PADDLE_CHECK=$(grep -i "use with paddle controllers" "$TM_FILEPATH")
+STELLA_PARAMS=""
+
+# now run it if possible
+if [ "x$PATH_TO_STELLA" = "x" ]; then
+	echo "Could not find the Stella emulator in /Applications."
+	echo "Download it from http://stella.sourceforge.net"
+else
+	# figure out if we need to switch to paddles
+	if [ "x$PADDLE_CHECK" != "x" ]; then
+		STELLA_PARAMS="-lc Paddles -rc Paddles"
+	fi
+	open -a "$PATH_TO_STELLA" --args $STELLA_PARAMS "$TM_DIRECTORY/$FILEBASE.bin"
+fi</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.6502asm</string>
+	<key>uuid</key>
+	<string>ED8900FC-AC2C-4DDD-92D9-92BF83D7CF41</string>
+</dict>
+</plist>

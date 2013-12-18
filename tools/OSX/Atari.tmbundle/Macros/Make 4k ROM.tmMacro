@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>action</key>
+				<string>replaceAll</string>
+				<key>findString</key>
+				<string>(\d)k ROM start point</string>
+				<key>ignoreCase</key>
+				<integer>1</integer>
+				<key>regularExpression</key>
+				<true/>
+				<key>replaceAllScope</key>
+				<string>document</string>
+				<key>replaceString</key>
+				<string>4k ROM start point</string>
+				<key>wrapAround</key>
+				<integer>1</integer>
+			</dict>
+			<key>command</key>
+			<string>findWithOptions:</string>
+		</dict>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>action</key>
+				<string>replaceAll</string>
+				<key>findString</key>
+				<string>ORG(\s+)\$F(\d)00</string>
+				<key>ignoreCase</key>
+				<integer>1</integer>
+				<key>regularExpression</key>
+				<true/>
+				<key>replaceAllScope</key>
+				<string>document</string>
+				<key>replaceString</key>
+				<string>ORG$1\$F000</string>
+				<key>wrapAround</key>
+				<integer>1</integer>
+			</dict>
+			<key>command</key>
+			<string>findWithOptions:</string>
+		</dict>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>action</key>
+				<string>replaceAll</string>
+				<key>findString</key>
+				<string>\$F(.)00]</string>
+				<key>ignoreCase</key>
+				<integer>1</integer>
+				<key>regularExpression</key>
+				<true/>
+				<key>replaceAllScope</key>
+				<string>document</string>
+				<key>replaceString</key>
+				<string>\$F000]</string>
+				<key>wrapAround</key>
+				<integer>1</integer>
+			</dict>
+			<key>command</key>
+			<string>findWithOptions:</string>
+		</dict>
+	</array>
+	<key>name</key>
+	<string>Make 4k ROM</string>
+	<key>uuid</key>
+	<string>28961B9C-3869-4660-A00E-9A8E18384F46</string>
+</dict>
+</plist>
