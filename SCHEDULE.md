@@ -20,18 +20,19 @@ Weeklet 1 (Jan 6/7)
 
 > Reading/writing: 
 > ---
-> For Tuesday morning: Racing the Beam: Through page 63. Also 
-> Assembly_In_One_Step.txt and 2600_music_guide.txt 
-> from the readings directory.
+> For Tuesday morning: 
 >
-> In particular, the concepts of the Ball, Playfield, Missiles, Sprites,
+> 1. Racing the Beam: Through page 63. In particular, the concepts of the Ball,
+> Playfield, Missiles, Sprites,
 > scanlines, color clocks, and so on.
+> 2. [Assembly_In_One_Step.txt](https://github.com/brinkmwj/CSE270B/blob/master/readings/Assembly_In_One_Step.txt) 
+> 3. [2600_music_guide.txt](https://github.com/brinkmwj/CSE270B/blob/master/readings/2600_music_guide.txt)
 
 > Play: Combat, Adventure
 > ---
 > For Tuesday morning: Be prepared to discuss implementation details, as they
 > related to the assigned reading. Be sure to read the manuals at 
-> http://atariage.com/system_items.html?SystemID=2600&ItemTypeID=MANUAL
+> [AtariAge](http://atariage.com/system_items.html?SystemID=2600&ItemTypeID=MANUAL)
 >
 > Combat: Setup a double-elimination tournament. 
 > Each student should play at least two different game modes.
@@ -60,13 +61,13 @@ Weeklet 2 (Jan 9/10)
 
 > Reading/writing:
 > ----
-> For Friday morning: Racing the Beam: Through page 117. Also,
-> Nicks_Guide_To_Cycle_Counting.txt and Smarter_Variable_Labels.html
-> from the readings directory.
+> For Friday morning: 
 >
-> Be prepared to discuss technical tricks used in Pitfall! and Pac-Man.
+> 1. Racing the Beam: Through page 117. Be prepared to discuss technical tricks used in Pitfall! and Pac-Man.
 > In particular, procedural generation of Pitfall! screens, 
 > the liana in Pitfall!, and use of flicker in Pac-Man.
+> 2. [Nicks_Guide_To_Cycle_Counting.txt](https://github.com/brinkmwj/CSE270B/blob/master/readings/Nicks_Guide_to_Cycle_Counting.txt)
+> 3. [Smarter_Variable_Labels.html](http://htmlpreview.github.io/?https://github.com/brinkmwj/CSE270B/blob/master/readings/Smarter_Variable_Labels.html)
 
 > Play: Pitfall, Pac-Man
 > ---
@@ -116,8 +117,10 @@ Weeklet 3 (Jan 13/14)
 
 > Reading/writing:
 > ---
-> For Tuesday afternoon: Either "Rise" or "How to do". Also stella.pdf
-> from the readings directory.
+> For Tuesday afternoon: 
+> 
+> 1. Either "Rise" or "How to do".
+> 2. [stella.pdf](https://github.com/brinkmwj/CSE270B/blob/master/readings/stella.pdf?raw=true)
 
 > Designing:
 > ---
@@ -202,4 +205,6 @@ Weeklet 6 (Jan 23/24)
 
 > Designing:
 > ---
-> Friday (SPECIAL TIME): Final presentations and critique.
+> Friday (SPECIAL TIME): Final presentations and critique. We will be 
+> videotaping this session, eventually posting a video diary of the class
+> on YouTube.
