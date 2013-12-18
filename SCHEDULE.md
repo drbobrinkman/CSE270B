@@ -28,7 +28,14 @@ Weeklet 1 (Jan 6/7)
 > Play: Combat, Adventure
 > ---
 > For Tuesday morning: Be prepared to discuss implementation details, as they
-> related to the assigned reading.
+> related to the assigned reading. Be sure to read the manuals at 
+> http://atariage.com/system_items.html?SystemID=2600&ItemTypeID=MANUAL
+>
+> Combat: Setup a double-elimination tournament. 
+> Each student should play at least two different game modes.
+>
+> Adventure: You won't all be able to play all the way through the game. 
+> Take turns playing and watching.
 
 > Designing:
 > ---
@@ -61,6 +68,9 @@ Weeklet 2 (Jan 9/10)
 > ---
 > For Friday morning: Be prepared to discuss gameplay in relation to the
 > assigned reading.
+>
+> For both games: Keep a leaderboard on the whiteboard. Top scores
+> in each win a horribly undesirable prise.
 
 > Reading/writing:
 > ----
@@ -88,6 +98,9 @@ Weeklet 3 (Jan 13/14)
 > What did the programmers give up when porting from the arcade version to
 > the 2600? (You should watch some YouTube footage of the original arcade
 > versions.)
+>
+> For both games: Keep a leaderboard on the whiteboard. Top scores in each
+> win a wonderfully undesirable prize.
 
 > Reading/writing:
 > ---
@@ -109,7 +122,10 @@ Weeklet 4 (Jan 16/17)
 > Play: Taz
 > ---
 > Be prepared to critique the control scheme of the game, and
-> present suggestions for improvement.
+> present suggestions for improvement. This is my favorite game,
+> so be prepared to explain why it is awesome.
+>
+> Keep a leaderboard on the whiteboard.
 
 > Reading/writing:
 > ---
@@ -150,8 +166,11 @@ Weeklet 6 (Jan 23/24)
 > ----
 >
 
-> Play: TBA
+> Play: Playtesting games for other groups
 > ---
+> Spend at least 1-2 hours this week playing games for other groups,
+> and giving them feedback to help improve their games. Most useful info is:
+> Features that can be cut/simplified!
 
 > Reading/writing:
 > ---
