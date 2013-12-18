@@ -11,7 +11,7 @@ Dr. W.J. "Bo" Brinkman, 205-G Benton Hall
 
 Catalog description
 -------------------
-Studio-based, and student inquiry driven, course in game development for the Atari 2600. Students will build experience in assembly language programming. Students will also investigate the ways that the Atari 2600-F¢s technical limitations influenced the development of the game design industry.-A
+Studio-based, and student inquiry driven, course in game development for the Atari 2600. Students will build experience in assembly language programming. Students will also investigate the ways that the Atari 2600's technical limitations influenced the development of the game design industry.
 
 Pre-requisites
 -----
