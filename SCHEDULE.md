@@ -93,7 +93,15 @@ Weeklet 3 (Jan 13/14)
 
 > Coding
 > ----
->
+> 1. TIA
+>   1. Display timing, racing the beam
+>   2. Sprite patterns in ROM
+>   3. Spring positioning
+>   4. Playfield basics
+>   5. Collision detection
+> 2. Assembly
+>   1. Addressing modes in 6502 Assembly
+>   2. Instruction timing in 6502 Assembly
 
 > Play: Galaxian, Defender
 > ---
@@ -122,7 +130,11 @@ Weeklet 4 (Jan 16/17)
 
 > Coding
 > ----
->
+> 1. Removing the HMOVE bars
+> 2. 32 and 48 pixel wide sprites
+> 3. Multi-color sprites
+> 4. Flicker
+> 5. Instruction interleaving/timing
 
 > Play: Taz
 > ---
@@ -147,18 +159,26 @@ Weeklet 4 (Jan 16/17)
 Weeklet 5 (Jan 20/21)
 ----
 
-> Coding
-> ----
->
-
 > Play: Your choice
 > ---
-> Select one game from the library. Each student should select a different
+> For Monday morning: Select one game from the library. Each student should select a different 
 > game, and this will be the basis for your final essay.
 
 > Reading/writing:
 > ---
+> Due on Tuesday, at 11:59pm, by email to the professor: Write a critical
+> analysis of your selected game. How did the VCS platform
+> influence the design of the game? How did the author subvert the
+> intentions of the hardware designers in making the game? How has
+> the game influenced later games, and how was it influenced by previous
+> games (particularly arcade games). Was the game primarily a port of
+> an arcade game, or was it a new form of game that only makes sense in the
+> context of the living room? Was it a "good" game at the time it was
+> released? Would we judge it differently today? Why?
 >
+> Monday morning: Be prepared to discuss your progress on your paper.
+> In particular, what are useful approaches for writing the paper so that
+> it is interesting, and worth reading?
 
 > Designing:
 > ---
@@ -166,10 +186,6 @@ Weeklet 5 (Jan 20/21)
 
 Weeklet 6 (Jan 23/24)
 ----
-
-> Coding
-> ----
->
 
 > Play: Playtesting games for other groups
 > ---
@@ -179,7 +195,10 @@ Weeklet 6 (Jan 23/24)
 
 > Reading/writing:
 > ---
->
+> Friday (SPECIAL TIME): Prepare a manual for your game, with at least one
+> high quality hard copy to be handed in to the professor. You may want
+> several copies so that your classmates can skim them during your
+> presentation.
 
 > Designing:
 > ---
