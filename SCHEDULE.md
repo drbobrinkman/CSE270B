@@ -20,7 +20,9 @@ Weeklet 1 (Jan 6/7)
 
 > Reading/writing: 
 > ---
-> For Tuesday morning: Racing the Beam: Through page 63.
+> For Tuesday morning: Racing the Beam: Through page 63. Also 
+> Assembly_In_One_Step.txt and 2600_music_guide.txt 
+> from the readings directory.
 >
 > In particular, the concepts of the Ball, Playfield, Missiles, Sprites,
 > scanlines, color clocks, and so on.
@@ -58,7 +60,9 @@ Weeklet 2 (Jan 9/10)
 
 > Reading/writing:
 > ----
-> For Friday morning: Racing the Beam: Through page 117. 
+> For Friday morning: Racing the Beam: Through page 117. Also,
+> Nicks_Guide_To_Cycle_Counting.txt and Smarter_Variable_Labels.html
+> from the readings directory.
 >
 > Be prepared to discuss technical tricks used in Pitfall! and Pac-Man.
 > In particular, procedural generation of Pitfall! screens, 
@@ -104,7 +108,8 @@ Weeklet 3 (Jan 13/14)
 
 > Reading/writing:
 > ---
-> For Tuesday afternoon: Either "Rise" or "How to do"
+> For Tuesday afternoon: Either "Rise" or "How to do". Also stella.pdf
+> from the readings directory.
 
 > Designing:
 > ---

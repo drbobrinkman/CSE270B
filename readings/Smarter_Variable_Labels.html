@@ -1,0 +1,72 @@
+
+<!-- saved from url=(0044)http://alienbill.com/2600/cookbook/vars.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></head><body bgcolor="white">
+<img width="32" height="32" src="./Smarter_Variable_Labels_files/smallchef.gif" align="absmiddle">
+
+<b><font face="arial" size="5">2600 Cookbook:</font></b>
+<i><b><font face="arial" size="5">Smarter Variable Labels</font></b></i>
+<br><br>
+
+
+<b><font face="arial" size="5">Problem:</font></b><br>
+You'd like to label a bunch of RAM variables without worrying about
+what memory location they're at.
+
+<br><br>
+<b><font face="arial" size="5">Solution:</font></b><br>
+Put the variables in an unitialized segment and specify the number of bytes
+each label refers to using the "ds" ("define space") pseudo-op in DASM.
+
+
+<br><br>
+<b><font face="arial" size="5">Discussion:</font></b><br>
+Historically, it wasn't uncommon to see code like the following
+for labeling RAM:
+<pre>SomeVariableName = $80
+TwoByteVariableName = $81
+YetAnotherVariable = $83
+</pre>
+This gets the job done, but it's clearly not very flexible.
+It isn't easy to add or delete variables except at the "end of the list",
+and you don't know how many bytes a variable is meant to be (the list could
+be out of order, or a previously used label could be deleted, etc etc.)<br><br>
+
+Andrew Davie would suggest this equivalent code:
+<pre>	SEG.U VARS
+	ORG $80
+SomeVariableName	ds 1
+TwoByteVariableName	ds 2
+YetAnotherVariable	ds 1
+	SEG CODE
+</pre>
+"SEG.U" is an instruction to DASM telling it to create an "unitialized segment",
+so it can make labels and what not, but won't try to create the same space when
+you build your ROM.  ("VARS" and "CODE" are just labels.) The number following "ds"
+is how many bytes to reserve.
+<br><br>
+
+There's only one possible drawback...you could be running out of RAM and not
+realize it! An easy solution to that was explained to me by Dennis Debro. Simply
+add this line before the "SEG CODE"
+<pre>	echo "----",($100 - *) , "bytes of RAM left"
+</pre>
+This will make DASM print how many bytes of RAM you have left (in hex).
+The only drawback is that it will print that once per DASM pass, so you'll
+probably see it twice during the assembly, but that's a minor issue.
+
+
+<br><br>
+<b><font face="arial" size="5">References:</font></b><br>
+<ul>
+<li>
+Section 16 of Andrew Davie's Programming for Newbies forum,
+<a href="http://www.atariage.com/forums/viewtopic.php?p=326469">Letting the Assembler do the Work</a>,
+covers this in great detail, along with a similar concept called "overlays" for
+using different variables names for the same memory location.
+</li></ul>
+
+<b><font face="arial" size="5">Example:</font></b><br>
+<i>See pretty much any of the longer code examples in the 2600 Cookbook.</i>
+
+<hr>
+<b><font face="arial" size="5">Back to <a href="http://alienbill.com/2600/cookbook/">2600 Cookbook</a></font></b><br></body></html>
