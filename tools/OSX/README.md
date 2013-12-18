@@ -17,11 +17,11 @@ installation.
 Installation steps
 ------------------
 1. Install dasm
- 1a. Copy dasm to /usr/bin
- 1b. Make sure the permissions on the file are rwxr-xr-x (chmod 755)
+ 1. Copy dasm to /usr/bin
+ 2. Make sure the permissions on the file are rwxr-xr-x (chmod 755)
 2. Install the header files
- 2a. Copy the vcs directory into /usr/include
- 2b. Make sure the permissions on the vcs directory is rwxr-xr-x, and that the permissions on both header files is rw-r--r-- (chmod 644)
+ 1. Copy the vcs directory into /usr/include
+ 2. Make sure the permissions on the vcs directory is rwxr-xr-x, and that the permissions on both header files is rw-r--r-- (chmod 644)
 3. Add the TextMate Bundle
- 3a. Double-click on the "Atari.tmbundle" file. TextMate should open and install it.
+ 1. Double-click on the "Atari.tmbundle" file. TextMate should open and install it.
 
