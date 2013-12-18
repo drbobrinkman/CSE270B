@@ -18,18 +18,22 @@ Weeklet 1 (Jan 6/7)
 >   2. Arithmetic
 >   3. Branches and loops
 
-> Play: Combat, Adventure
-> ---
-
 > Reading/writing: 
 > ---
+> For Tuesday morning: Racing the Beam: Through page 63.
 >
+> In particular, the concepts of the Ball, Playfield, Missiles, Sprites,
+> scanlines, color clocks, and so on.
+
+> Play: Combat, Adventure
+> ---
+> For Tuesday morning: Be prepared to discuss implementation details, as they
+> related to the assigned reading.
 
 > Designing:
 > ---
 > Tuesday afternoon: Lightning pitches of "headless" games. Critique. 
 > Group formation for headless games project.
->
 
 Weeklet 2 (Jan 9/10)
 ----
@@ -44,15 +48,23 @@ Weeklet 2 (Jan 9/10)
 > 3. Game basics
 >   1. Using "state machines" to implement main game logic
 >   2. Using function calls for update, draw, and post-draw methods
->
-
-> Play: Pitfall, Pac-Man
-> ---
->
 
 > Reading/writing:
 > ----
+> For Friday morning: Racing the Beam: Through page 117. 
 >
+> Be prepared to discuss technical tricks used in Pitfall! and Pac-Man.
+> In particular, procedural generation of Pitfall! screens, 
+> the liana in Pitfall!, and use of flicker in Pac-Man.
+
+> Play: Pitfall, Pac-Man
+> ---
+> For Friday morning: Be prepared to discuss gameplay in relation to the
+> assigned reading.
+
+> Reading/writing:
+> ----
+> For Friday morning: Racing the Beam: Through page 117. 
 
 > Designing:
 > ----
@@ -69,15 +81,23 @@ Weeklet 3 (Jan 13/14)
 > ----
 >
 
-> Play: Space Invaders, Taz, Galaxian
+> Play: Galaxian, Defender
 > ---
+> Be prepared to analyze these games from the point of view of the VCS
+> platform. What types of technical tricks were needed to make them?
+> What did the programmers give up when porting from the arcade version to
+> the 2600? (You should watch some YouTube footage of the original arcade
+> versions.)
 
 > Reading/writing:
 > ---
+> For Tuesday afternoon: Either "Rise" or "How to do"
 
 > Designing:
 > ---
 > Tuesday morning: Mid-point critique of "simple" games.
+>
+> Tuesday afternoon discussion: What kind of games should we make?
 
 Weeklet 4 (Jan 16/17)
 ----
@@ -86,12 +106,14 @@ Weeklet 4 (Jan 16/17)
 > ----
 >
 
-> Play: TBA
+> Play: Taz
 > ---
+> Be prepared to critique the control scheme of the game, and
+> present suggestions for improvement.
 
 > Reading/writing:
 > ---
->
+> For Thursday: Finish Racing the Beam.
 
 > Designing:
 > ---
@@ -108,8 +130,10 @@ Weeklet 5 (Jan 20/21)
 > ----
 >
 
-> Play: TBA
+> Play: Your choice
 > ---
+> Select one game from the library. Each student should select a different
+> game, and this will be the basis for your final essay.
 
 > Reading/writing:
 > ---
