@@ -29,6 +29,7 @@ Required texts:
 Meetings
 ----
 MTRF 10:00a-12:00p and 3:00p-4:25p, in Benton 010.
+
 Students will have 24/7 access to Benton 010.
 
 Grading
