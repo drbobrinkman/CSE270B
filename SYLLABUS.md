@@ -45,7 +45,21 @@ I will use the standard CSE grading criteria in this course:
 I do give +/- grades as appropriate.
 
 The value of the course work will be divided as follows: 
-TODO
+
+1. 15%: Sound-only game
+2. 15%: Simple graphics game
+3. 10%: Analysis paper
+4. 30%: Final game
+5. 10%: Manual for final game
+6. 20%: Participation and exercises (class attendance, reading quizzes, etc)
+
+Attendance policy
+--------
+Due to the unusual format of the course, missing a day of class is similar to missing 1.3 weeks of a normal semester course.
+
+For this reason, any missed class periods require permission from the instructor (basically, I want to help you find an alternative way to handle the missed material BEFORE it happens). For each class period missed without permission, 5% will be deducted from Participation. If you have more than 4 unexcused absences you will fail the course.
+
+I am open to rescheduling class, or doing whatever else is needed to make sure that everyone has a reasonable opportunity to complete all course material. Please contact me if you have any worries.
 
 Conduct policy
 -------------- 
