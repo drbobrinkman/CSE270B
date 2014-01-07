@@ -16,7 +16,10 @@
 ;------------------------------------------------
 ; Constants
 ;------------------------------------------------
-BLACK = #$00
+DK_BLUE = $80
+LT_BLUE = $8F
+
+FRAMES_PER_CHANGE = 6
 
 ;------------------------------------------------
 ; RAM
@@ -26,6 +29,7 @@ BLACK = #$00
 
 bgcolor		.byte
 frame		.byte
+colordir	.byte
 
 ;------------------------------------------------
 ; Start of ROM
@@ -35,10 +39,21 @@ frame		.byte
 
 Start 
 	CLEAN_START			; Clear RAM and Registers
+	
 	lda		#$FF
 	sta		AUDV0
 	sta		AUDV1
 
+	;Initialize the bgcolor variable
+	lda		#DK_BLUE
+	sta		bgcolor
+	
+	lda		#0
+	sta		frame
+	
+	lda		#1
+	sta		colordir
+	
 ;------------------------------------------------
 ; Vertical Blank
 ;------------------------------------------------
@@ -50,8 +65,62 @@ MainLoop
     sta     TIM64T
 
 	;***** Vertical Blank code goes here
+
+	;**** Background luminance update logic
+	;update frame counter
+	inc 	frame
+	lda		frame
+	cmp		#FRAMES_PER_CHANGE
+	bne		.dontresetcolor ;Change BG color every so many frames
+
+	;reset frame counter back to 0
 	lda		#0
+	sta		frame
+	
+	;Calculate the new bgcolor
+	clc
+	lda		colordir
+	adc		bgcolor
 	sta		bgcolor
+	
+	;Check to see: is it too light?
+	cmp		#LT_BLUE+1
+	bne		.nottoolight
+	
+	;Reverse color direction
+	lda		#255
+	sta		colordir
+	lda		#LT_BLUE-1
+	sta		bgcolor
+.nottoolight	
+	
+	;Check to see: is it too dark?
+	cmp		#DK_BLUE-1
+	bne		.dontresetcolor
+	
+	;Reverse color direction
+	lda		#1
+	sta		colordir
+	lda		#DK_BLUE+1
+	sta		bgcolor
+.dontresetcolor
+
+	;****** Read the reset switch
+	lda		INPT4
+	bmi		.resetNotPressed
+
+	lda		#DK_BLUE
+	sta		bgcolor
+	lda 	#1
+	sta		colordir
+	
+	
+	
+.resetNotPressed
+
+	;*******Set the background color in the TIA
+	lda		bgcolor
+	sta		COLUBK
 	
 .waitForVBlank
 	lda		INTIM
@@ -63,10 +132,7 @@ MainLoop
 ;------------------------------------------------	
 DrawScreen
 	ldx		#192+1		; Kernel goes here
-.scanline
-	lda		bgcolor
-	sta		COLUBK
-	inc		bgcolor
+.scanline	
 	dex
 	sta		WSYNC
 	bne		.scanline
