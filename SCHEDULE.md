@@ -20,7 +20,7 @@ Weeklet 1 (Jan 6/7)
 
 > Reading/writing: 
 > ---
-> For Tuesday morning: 
+> For Thursday morning: 
 >
 > 1. Racing the Beam: Through page 63. In particular, the concepts of the Ball,
 > Playfield, Missiles, Sprites,
@@ -30,7 +30,7 @@ Weeklet 1 (Jan 6/7)
 
 > Play: Combat, Adventure
 > ---
-> For Tuesday morning: Be prepared to discuss implementation details, as they
+> For Thursday morning: Be prepared to discuss implementation details, as they
 > related to the assigned reading. Be sure to read the manuals at 
 > [AtariAge](http://atariage.com/system_items.html?SystemID=2600&ItemTypeID=MANUAL)
 >
