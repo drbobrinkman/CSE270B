@@ -42,7 +42,7 @@ Weeklet 1 (Jan 6/7)
 
 > Designing:
 > ---
-> Thursday afternoon: Lightning pitches of "headless" games. Critique. 
+> Tuesday afternoon: Lightning pitches of "headless" games. Critique. 
 > Group formation for headless games project.
 
 Weeklet 2 (Jan 9/10)
