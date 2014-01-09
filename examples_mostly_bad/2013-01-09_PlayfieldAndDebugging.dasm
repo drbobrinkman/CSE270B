@@ -1,0 +1,150 @@
+;------------------------------------------------
+;
+; Playfield Example
+; Atari VCS Game 
+; Created by Brinkman, Bo Dr. on 2014-01-09.
+;
+; Copyright (c) 2014 __MyCompanyName__. All rights reserved.
+;
+; Use with paddle controllers
+;
+;------------------------------------------------
+	processor 	6502
+	include 	vcs.h
+	include 	macro.h
+
+;------------------------------------------------
+; Constants
+;------------------------------------------------
+BLACK = #$00
+
+;------------------------------------------------
+; RAM
+;------------------------------------------------
+    SEG.U   variables
+    ORG     $80
+
+bgcolor		.byte
+frame		.byte
+
+foo0		.byte
+foo1		.byte
+foo2		.byte
+foo3 		.byte
+
+;------------------------------------------------
+; Start of ROM
+;------------------------------------------------
+	SEG   Bank0
+	ORG   $F000       	; 4k ROM start point
+
+Start 
+	CLEAN_START			; Clear RAM and Registers
+	lda		#$00
+	sta		AUDV0
+	sta		AUDV1
+	sta		frame
+	
+	lda		#1
+	sta		AUDC0
+	sta		AUDF0
+
+	lda		#%11111111
+	sta		foo0
+	
+	lda		#%10000001
+	sta		foo1
+	sta		foo3
+
+	lda		#%10011001
+	sta		foo2
+	
+;------------------------------------------------
+; Vertical Blank
+;------------------------------------------------
+MainLoop
+	lda		#%00000000
+	sta		VBLANK
+	VERTICAL_SYNC
+    lda     #43
+    sta     TIM64T
+
+	;***** Vertical Blank code goes here
+	lda		#0
+	sta		bgcolor
+	
+	lda		#$88
+	sta		COLUPF
+	
+	lda 	frame
+	sta		AUDV0
+	
+.waitForVBlank
+	lda		INTIM
+	bne		.waitForVBlank
+	sta		WSYNC
+
+;------------------------------------------------
+; Kernel
+;------------------------------------------------	
+DrawScreen
+	ldx		#192+1		; Kernel goes here
+.scanline
+	;X is the counter, but we only want a 2-bit answer (0,1,2 or 3)
+	txa 	
+	and		#%00000011 ;Mask off all but lowest two bits
+	tay		;Put it in the available index register
+	
+	;--Do an array index lookup
+	lda		foo0,y
+	sta		PF1
+	
+	;Handle bg color
+	lda		bgcolor
+	sta		COLUBK
+	inc		bgcolor
+	
+	nop
+	nop
+	nop
+
+	
+	lda		#0
+	sta		PF1
+	
+	dex
+	sta		WSYNC
+	bne		.scanline
+
+;------------------------------------------------
+; Overscan
+;------------------------------------------------
+	lda		#%00000010
+	sta		VBLANK
+    lda		#36
+    sta		TIM64T
+
+	;***** Overscan Code goes here
+	
+	
+.waitForOverscan
+	lda     INTIM
+	bne     .waitForOverscan
+
+	jmp		MainLoop
+
+;------------------------------------------------
+; ROM Tables
+;------------------------------------------------
+	;***** ROM tables go here
+
+;------------------------------------------------
+; Interrupt Vectors
+;------------------------------------------------
+	echo [*-$F000]d, " ROM bytes used"
+	ORG    $FFFA
+	.word  Start         ; NMI
+	.word  Start         ; RESET
+	.word  Start         ; IRQ
+    
+	END
