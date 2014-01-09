@@ -98,7 +98,7 @@ Weeklet 3 (Jan 13/14)
 > 1. TIA
 >   1. Display timing, racing the beam
 >   2. Sprite patterns in ROM
->   3. Spring positioning
+>   3. Sprite positioning
 >   4. Playfield basics
 >   5. Collision detection
 > 2. Assembly
