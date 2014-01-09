@@ -55,6 +55,7 @@ Weeklet 2 (Jan 9/10)
 >   6. Getting input from joysticks
 > 2. Assembly basics
 >   4. Multi-byte integers (such as score counters or timers)
+>   5. Using the Stella debugger
 > 3. Game basics
 >   1. Using "state machines" to implement main game logic
 >   2. Using function calls for update, draw, and post-draw methods
