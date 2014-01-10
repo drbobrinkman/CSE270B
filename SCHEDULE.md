@@ -84,7 +84,7 @@ Weeklet 2 (Jan 9/10)
 
 > Designing:
 > ----
-> Friday morning: Final presentations and critique of headless games.
+> Friday afternoon: Final presentations and critique of headless games.
 >
 > Friday afternoon: Lightning pitches of "simple" games. Critique. 
 > Group formation for simple games project.
