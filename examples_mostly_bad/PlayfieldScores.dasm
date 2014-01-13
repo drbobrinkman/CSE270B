@@ -26,6 +26,8 @@ BLACK = #$00
 
 ;--Our actual score
 score0	.byte
+score1	.byte
+
 loopcounter .byte
 
 ;--Character 1 address start
@@ -42,8 +44,9 @@ Start
 	CLEAN_START			; Clear RAM and Registers
 
 	;Initialize variables
-	lda		#9
+	lda		#0
 	sta		score0
+	sta		score1
 	
 	lda		#0
 	sta		starting_x_value_lo
@@ -70,6 +73,9 @@ MainLoop
 	lda		score0
 	adc		#1
 	sta		score0
+	lda		score1
+	adc		#0
+	sta		score1
 	cld
 	
 	;--Calculate starting_x_value for the
