@@ -1,0 +1,317 @@
+;------------------------------------------------
+;
+; untitled
+; Atari VCS Game 
+; Created by Brinkman, Bo Dr. on 2014-01-13.
+;
+; Copyright (c) 2014 __MyCompanyName__. All rights reserved.
+;
+; Use with joystick controllers
+;
+;------------------------------------------------
+	processor 	6502
+	include 	vcs.h
+	include 	macro.h
+
+;------------------------------------------------
+; Constants
+;------------------------------------------------
+BLACK = #$00
+
+;------------------------------------------------
+; RAM
+;------------------------------------------------
+    SEG.U   variables
+    ORG     $80
+
+;--Our actual score
+score0	.byte
+loopcounter .byte
+
+;--Character 1 address start
+starting_x_value_lo .byte
+starting_x_value_hi .byte
+
+;------------------------------------------------
+; Start of ROM
+;------------------------------------------------
+	SEG   Bank0
+	ORG   $F000       	; 4k ROM start point
+
+Start 
+	CLEAN_START			; Clear RAM and Registers
+
+	;Initialize variables
+	lda		#9
+	sta		score0
+	
+	lda		#0
+	sta		starting_x_value_lo
+	sta		starting_x_value_hi
+	
+	lda		#$86
+	sta		COLUPF
+	
+;------------------------------------------------
+; Vertical Blank
+;------------------------------------------------
+MainLoop
+	lda		#0
+	sta		VBLANK
+	VERTICAL_SYNC
+    lda     #43
+    sta     TIM64T
+
+	;***** Vertical Blank code goes here
+	
+	;--Increment the score
+	clc
+	sed
+	lda		score0
+	adc		#1
+	sta		score0
+	cld
+	
+	;--Calculate starting_x_value for the
+	;  low bits of score0
+	lda	score0
+	and	#%00001111
+	;Store the current score
+	sta	starting_x_value_lo
+	;Multiply it by 4
+	asl
+	asl
+	
+	clc
+	adc	starting_x_value_lo
+	sta	starting_x_value_lo
+	
+	;--Calculate starting x for the hi bits
+	lda	score0
+	
+	;Shift the 4 hi bits to the right, 4 places
+	lsr
+	lsr
+	lsr
+	lsr
+	
+	;Store the current score
+	sta	starting_x_value_hi
+	;Multiply it by 4
+	clc
+	asl
+	asl
+	
+	clc
+	adc	starting_x_value_hi
+	sta	starting_x_value_hi
+	
+.waitForVBlank
+	lda		INTIM
+	bne		.waitForVBlank
+	sta		WSYNC
+
+;------------------------------------------------
+; Kernel
+;------------------------------------------------	
+DrawScreen
+	lda	#5
+	sta	loopcounter
+
+	ldx	starting_x_value_lo	
+	lda	.zero_right,x
+	ldy	starting_x_value_hi
+	ora .zero_left,y
+.scoreloop	
+	sta	PF1
+	sta WSYNC
+	;TODO either clear out PF1, or set based on
+	; second player
+	sta WSYNC	
+	inx
+	iny
+	lda	.zero_right,x
+	ora .zero_left,y
+	sta	PF1
+	dec loopcounter
+	bne	.scoreloop
+
+
+	lda	#0
+	sta	PF1
+	ldx		#182+1		; Kernel goes here
+.scanline
+	dex
+	sta		WSYNC
+	bne		.scanline
+
+;------------------------------------------------
+; Overscan
+;------------------------------------------------
+	lda		#%01000010
+	sta		VBLANK
+    lda		#36
+    sta		TIM64T
+
+	;***** Overscan Code goes here
+
+.waitForOverscan
+	lda     INTIM
+	bne     .waitForOverscan
+
+	jmp		MainLoop
+
+;------------------------------------------------
+; ROM Tables
+;------------------------------------------------
+	;***** ROM tables go here
+	ORG	$FA00
+.zero_left
+	.byte	%11100000
+	.byte	%10100000
+	.byte	%10100000
+	.byte	%10100000
+	.byte	%11100000
+	
+.one_left
+	.byte	%01000000
+	.byte	%11000000
+	.byte	%01000000
+	.byte	%01000000
+	.byte	%11100000
+	
+.two_left
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+	
+.three_left
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+		
+.four_left
+	.byte	%10100000
+	.byte	%10100000
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%00100000
+	
+.five_left
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+	
+.six_left
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.seven_left
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.eight_left
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+					
+.nine_left
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.zero_right
+	.byte	%00001110
+	.byte	%00001010
+	.byte	%00001010
+	.byte	%00001010
+	.byte	%00001110
+
+.one_right
+	.byte	%00000100
+	.byte	%00001100
+	.byte	%00000100
+	.byte	%00000100
+	.byte	%00001110
+
+.two_right
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.three_right
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+
+.four_right
+	.byte	%10100000
+	.byte	%10100000
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%00100000
+
+.five_right
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.six_right
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.seven_right
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.eight_right
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000
+
+.nine_right
+	.byte	%11100000
+	.byte	%00100000
+	.byte	%11100000
+	.byte	%10000000
+	.byte	%11100000			
+;------------------------------------------------
+; Interrupt Vectors
+;------------------------------------------------
+	echo [*-$F000]d, " ROM bytes used"
+	ORG    $FFFA
+	.word  Start         ; NMI
+	.word  Start         ; RESET
+	.word  Start         ; IRQ
+    
+	END
