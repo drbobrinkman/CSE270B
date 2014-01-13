@@ -160,12 +160,12 @@ Weeklet 4 (Jan 16/17)
 > Group formation for final project games project.
 
 
-Weeklet 5 (Jan 20/21)
+Weeklet 5 (Jan 21)
 ----
 
 > Play: Your choice
 > ---
-> For Monday morning: Select one game from the library. Each student should select a different 
+> For Tuesday morning: Select one game from the library. Each student should select a different 
 > game, and this will be the basis for your final essay.
 
 > Reading/writing:
@@ -180,13 +180,13 @@ Weeklet 5 (Jan 20/21)
 > context of the living room? Was it a "good" game at the time it was
 > released? Would we judge it differently today? Why?
 >
-> Monday morning: Be prepared to discuss your progress on your paper.
+> Tuesday morning: Be prepared to discuss your progress on your paper.
 > In particular, what are useful approaches for writing the paper so that
 > it is interesting, and worth reading?
 
 > Designing:
 > ---
-> Tuesday morning: Mid-point presentation and critique for final project games.
+> Tuesday afternoon: Mid-point presentation and critique for final project games.
 
 Weeklet 6 (Jan 23/24)
 ----
