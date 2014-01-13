@@ -118,7 +118,7 @@ Weeklet 3 (Jan 13/14)
 
 > Reading/writing:
 > ---
-> For Tuesday afternoon: 
+> For Tuesday MORNING: 
 > 
 > 1. Either "Rise" or "How to do".
 > 2. [stella.pdf](https://github.com/brinkmwj/CSE270B/blob/master/readings/stella.pdf?raw=true)
@@ -127,7 +127,7 @@ Weeklet 3 (Jan 13/14)
 > ---
 > Tuesday morning: Mid-point critique of "simple" games.
 >
-> Tuesday afternoon discussion: What kind of games should we make?
+> Tuesday MORNING discussion: What kind of games should we make?
 
 Weeklet 4 (Jan 16/17)
 ----
