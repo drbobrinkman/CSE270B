@@ -199,13 +199,13 @@ Weeklet 6 (Jan 23/24)
 
 > Reading/writing:
 > ---
-> Friday (SPECIAL TIME): Prepare a manual for your game, with at least one
+> Friday, 11am: Prepare a manual for your game, with at least one
 > high quality hard copy to be handed in to the professor. You may want
 > several copies so that your classmates can skim them during your
 > presentation.
 
 > Designing:
 > ---
-> Friday (SPECIAL TIME): Final presentations and critique. We will be 
+> Friday, 11am: Final presentations and critique. We will be 
 > videotaping this session, eventually posting a video diary of the class
 > on YouTube.
