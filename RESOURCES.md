@@ -7,7 +7,7 @@ General
 
 6502 Assembly
 -----
-1. Full instruction reference, with cycle counts. http://www.obelisk.demon.co.uk/6502/reference.html
+1. Full instruction reference, with cycle counts. http://www.6502.org/tutorials/6502opcodes.html
 
 
 Stella/TIA Technical information
